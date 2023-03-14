@@ -1,6 +1,7 @@
 import React from "react";
-import Label from "../Label";
-import Input from "../Input";
+import Label from "../../form/Label";
+import Input from "../../form/Input";
+import ButtonPrimary from "../../button/ButtonPrimary";
 
 const StepOneForm = ({
   jobTitle,
@@ -17,7 +18,9 @@ const StepOneForm = ({
       <div className="mb-6">
         <Label htmlFor={"jobtitile"}>
           Job title
-          <span className={!isFormValid.jobTitle ? "text-err" : "text-text-color"}>
+          <span
+            className={!isFormValid.jobTitle ? "text-err" : "text-text-color"}
+          >
             *
           </span>
         </Label>
@@ -34,7 +37,11 @@ const StepOneForm = ({
       <div className="mb-6">
         <Label htmlFor={"companyname"}>
           Company name
-          <span className={!isFormValid.companyName ? "text-err" : "text-text-color"}>
+          <span
+            className={
+              !isFormValid.companyName ? "text-err" : "text-text-color"
+            }
+          >
             *
           </span>
         </Label>
@@ -51,7 +58,9 @@ const StepOneForm = ({
       <div className="mb-6">
         <Label htmlFor={"industry"}>
           Industry
-          <span className={!isFormValid.industry ? "text-err" : "text-text-color"}>
+          <span
+            className={!isFormValid.industry ? "text-err" : "text-text-color"}
+          >
             *
           </span>
         </Label>
@@ -69,7 +78,9 @@ const StepOneForm = ({
         <div className="w-full">
           <Label htmlFor={"location"}>
             Location
-            <span className={!isFormValid.location ? "text-err" : "text-text-color"}>
+            <span
+              className={!isFormValid.location ? "text-err" : "text-text-color"}
+            >
               *
             </span>
           </Label>
@@ -97,13 +108,7 @@ const StepOneForm = ({
       </div>
 
       <div className="flex items-center justify-end mt-24 w-full">
-        <button
-          className="bg-primary-color hover:bg-blue-700 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="button"
-          onClick={onNextclickHandler}
-        >
-          Next
-        </button>
+        <ButtonPrimary onClick={onNextclickHandler}>Next</ButtonPrimary>
       </div>
     </form>
   );

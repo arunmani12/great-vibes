@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import StepOneForm from "../steps/StepOneForm";
-import StepTwoForm from "../steps/StepTwoForm";
+import StepOneForm from "./steps/StepOneForm";
+import StepTwoForm from "./steps/StepTwoForm";
 import axios from "axios";
 import Loading from "../loader/Loading";
 
 const JdForm = ({setModelIsopen,setData}) => {
   const [currentStep, setCurrentStep] = useState(1);
+  const [loading, setLoading] = useState(false);
+
   const [isFormValid, setIsFormValid] = useState({
     jobTitle: true,
     companyName: true,
@@ -19,15 +21,14 @@ const JdForm = ({setModelIsopen,setData}) => {
     industry: "",
     location: "",
     remoteType: "",
-    experienceMin: 1,
-    experienceMax: 2,
-    salaryMin: 30000,
-    salaryMax: 50000,
+    experienceMin: null,
+    experienceMax: null,
+    salaryMin: null,
+    salaryMax: null,
     totalEmployee: "",
     applyType: "",
   });
 
-  const [loading, setLoading] = useState(false);
 
   const onSubmitHandler = () => {
     setLoading(true);
@@ -72,7 +73,6 @@ const JdForm = ({setModelIsopen,setData}) => {
       !newState.companyName ||
       !newState.location
     ) {
-      console.log("not valid");
       return;
     }
 
@@ -82,7 +82,7 @@ const JdForm = ({setModelIsopen,setData}) => {
   const FormHeader = () => (
     <div className="flex justify-between h-7 ">
       <p className="text-xl">Create a job</p>
-      <p className="text-lg">Step 1</p>
+      <p className="text-lg">Step {currentStep}</p>
     </div>
   );
 

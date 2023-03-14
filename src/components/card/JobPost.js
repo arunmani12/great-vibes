@@ -1,4 +1,6 @@
 import React from "react";
+import ButtonPrimary from "../button/ButtonPrimary";
+import ButtonPrimaryTwo from "../button/ButtonPrimaryTwo";
 
 const JobPost = ({
   jobTitle,
@@ -36,19 +38,9 @@ const JobPost = ({
         <p className="mb-6">{totalEmployee} employees</p>
         <div className=" flex gap-6">
           {applyType !== "External apply" ? (
-            <button
-              className="bg-primary-color hover:bg-blue-700 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="button"
-            >
-              Apply Now
-            </button>
+            <ButtonPrimary>Apply Now</ButtonPrimary>
           ) : (
-            <button
-              className="bg-white border border-primary-color text-primary-color font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="button"
-            >
-              External Apply
-            </button>
+            <ButtonPrimaryTwo>External Apply</ButtonPrimaryTwo>
           )}
         </div>
       </div>

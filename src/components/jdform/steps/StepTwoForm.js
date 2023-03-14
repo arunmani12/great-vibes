@@ -1,16 +1,16 @@
 import React from "react";
-import Label from "../Label";
-import Input from "../Input";
+import Label from "../../form/Label";
+import Input from "../../form/Input";
+import ButtonPrimary from "../../button/ButtonPrimary";
+
 
 const StepTwoForm = ({
   experienceMin,
   experienceMax,
   totalEmployee,
-  applyType,
   onChangehandler,
   salaryMin,
   salaryMax,
-  onNextclickHandler,
   setJdData,
   onSubmitHandler
 }) => {
@@ -113,13 +113,7 @@ const StepTwoForm = ({
       </div>
 
       <div className="flex items-center justify-end mt-24 w-full">
-        <button
-          className="bg-primary-color hover:bg-blue-700 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="button"
-          onClick={onSubmitHandler}
-        >
-          Next
-        </button>
+        <ButtonPrimary onClick={onSubmitHandler}>Save</ButtonPrimary>
       </div>
     </form>
   );
