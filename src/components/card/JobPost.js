@@ -12,6 +12,7 @@ const JobPost = ({
   experienceMax,
   salaryMin,
   salaryMax,
+  
   totalEmployee,
   applyType,
 }) => {
